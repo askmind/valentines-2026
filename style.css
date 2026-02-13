@@ -18,8 +18,8 @@ button { padding: 14px 18px; font-size: 16px; border-radius: 14px; border: 0; }
   position: absolute; /* Allows free positioning inside playArea */
   font-size: 40px; /* Controls visual size of emoji */
 
-  width: 70px; /* Increase invisible tap area width */
-  height: 70px; /* Increase invisible tap area height */
+  width: 120px; /* Increase invisible tap area width */
+  height: 120px; /* Increase invisible tap area height */
 
   display: flex; /* Allows us to center emoji inside the bigger hitbox */
   align-items: center; /* Vertically center emoji */
