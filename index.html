@@ -23,10 +23,18 @@
         <div id="popup" class="popup hidden"></div>
       </section>
 
-      <section id="final" class="hidden">
-        <h2>JIPPIIIIIII 💖</h2>
-        <p id="finalText">Happy Valentine’s Day!</p>
-      </section>
+     <section id="final" class="hidden"> <!-- Final screen shown after winning -->
+  <h2>JIPPPPIIIIIII 💖</h2> <!-- Celebration headline -->
+  <p id="finalText">You did it!! 💖 Be my Valentine?</p> <!-- The question text -->
+
+  <div id="finalButtons" class="final-buttons"> <!-- Container for Yes/No buttons -->
+    <button id="yesBtn" class="yes-btn" type="button">Yes 💘</button> <!-- The button we want her to press -->
+    <button id="noBtn" class="no-btn" type="button">No 😾</button> <!-- The button that will dodge -->
+  </div>
+
+  <p id="yesResult" class="hidden yes-result"></p> <!-- Message shown after she clicks Yes -->
+</section>
+
     </main>
 
     <script src="./script.js"></script>
