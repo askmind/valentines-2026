@@ -35,3 +35,33 @@ button { padding: 14px 18px; font-size: 16px; border-radius: 14px; border: 0; }
   box-shadow: 0 8px 30px rgba(0,0,0,.15);
   max-width: 92vw;
 }
+
+.final-buttons { /* Layout container for the final Yes/No buttons */
+  position: relative; /* Makes it possible for the No button to move within the screen context */
+  width: 100%; /* Use full available width on mobile */
+  max-width: 520px; /* Match your app width so it feels consistent */
+  margin: 18px auto 0; /* Center the container with spacing above */
+  height: 140px; /* Give room for the No button to jump around */
+  display: flex; /* Place buttons side-by-side initially */
+  align-items: center; /* Vertically align buttons */
+  justify-content: center; /* Center the buttons horizontally */
+  gap: 14px; /* Space between buttons */
+}
+
+.yes-btn { /* Styling for the Yes button */
+  transition: transform 200ms ease; /* Smooth scaling as it grows */
+}
+
+.no-btn { /* Styling for the No button */
+  position: absolute; /* Allows us to move it around freely */
+  left: 50%; /* Start centered horizontally */
+  top: 55%; /* Start around the lower-middle area */
+  transform: translate(-50%, -50%); /* Actually center the button around (left, top) */
+  touch-action: manipulation; /* Better mobile tap behavior */
+}
+
+.yes-result { /* Text shown after she clicks Yes */
+  margin-top: 16px; /* Space above the result line */
+  font-size: 18px; /* Slightly larger, feels more “moment” */
+}
+
