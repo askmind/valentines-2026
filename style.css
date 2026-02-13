@@ -1,1 +1,37 @@
-# valentines-2026 
+:root { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+body { margin: 0; }
+.app { max-width: 520px; margin: 0 auto; padding: 20px; text-align: center; }
+button { padding: 14px 18px; font-size: 16px; border-radius: 14px; border: 0; }
+.hidden { display: none; }
+
+#playArea {
+  position: relative;
+  height: 62vh;
+  min-height: 420px;
+  margin-top: 16px;
+  border-radius: 18px;
+  background: #fff0f6;
+  overflow: hidden;
+}
+
+.heart {
+  position: absolute;
+  font-size: 40px;
+  user-select: none;
+  touch-action: manipulation;
+  transform: translate(-50%, -50%);
+}
+
+.hud { display: flex; justify-content: center; gap: 12px; margin-top: 10px; }
+
+.popup {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%);
+  background: white;
+  padding: 12px 14px;
+  border-radius: 14px;
+  box-shadow: 0 8px 30px rgba(0,0,0,.15);
+  max-width: 92vw;
+}

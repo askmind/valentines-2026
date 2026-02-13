@@ -1,1 +1,35 @@
-# valentines-2026 
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>💘 For You</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <h1>A tiny game for my favorite person 💘</h1>
+      <p>Tap the hearts to collect sweet messages.</p>
+
+      <button id="startBtn">Start</button>
+
+      <section id="game" class="hidden">
+        <div class="hud">
+          <div id="counter">0 / 10</div>
+        </div>
+
+        <div id="playArea" aria-label="Game area"></div>
+
+        <div id="popup" class="popup hidden"></div>
+      </section>
+
+      <section id="final" class="hidden">
+        <h2>You did it 💖</h2>
+        <p id="finalText">Happy Valentine’s Day!</p>
+      </section>
+    </main>
+
+    <script src="./game.js"></script>
+  </body>
+</html>
+
