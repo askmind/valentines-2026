@@ -15,12 +15,22 @@ button { padding: 14px 18px; font-size: 16px; border-radius: 14px; border: 0; }
 }
 
 .heart {
-  position: absolute;
-  font-size: 40px;
-  user-select: none;
-  touch-action: manipulation;
-  transform: translate(-50%, -50%);
+  position: absolute; /* Allows free positioning inside playArea */
+  font-size: 40px; /* Controls visual size of emoji */
+
+  width: 70px; /* Increase invisible tap area width */
+  height: 70px; /* Increase invisible tap area height */
+
+  display: flex; /* Allows us to center emoji inside the bigger hitbox */
+  align-items: center; /* Vertically center emoji */
+  justify-content: center; /* Horizontally center emoji */
+
+  user-select: none; /* Prevent text selection on mobile */
+  touch-action: manipulation; /* Improve touch responsiveness */
+
+  transform: translate(-50%, -50%); /* Keep centering logic for spawn positioning */
 }
+
 
 .hud { display: flex; justify-content: center; gap: 12px; margin-top: 10px; }
 
