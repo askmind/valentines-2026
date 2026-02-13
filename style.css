@@ -24,16 +24,22 @@ button { padding: 14px 18px; font-size: 16px; border-radius: 14px; border: 0; }
 
 .hud { display: flex; justify-content: center; gap: 12px; margin-top: 10px; }
 
-.popup {
-  position: fixed;
-  left: 50%;
-  bottom: 24px;
-  transform: translateX(-50%);
-  background: white;
-  padding: 12px 14px;
-  border-radius: 14px;
-  box-shadow: 0 8px 30px rgba(0,0,0,.15);
-  max-width: 92vw;
+.popup { 
+  position: fixed; /* Take it out of normal layout and lock to viewport */
+  top: 50%; /* Position vertically in middle of screen */
+  left: 50%; /* Position horizontally in middle of screen */
+  transform: translate(-50%, -50%); /* True centering (shift back half width/height) */
+
+  background: white; /* Clean white card */
+  padding: 20px 24px; /* Space inside */
+  border-radius: 18px; /* Soft rounded edges */
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2); /* Soft shadow */
+
+  max-width: 85vw; /* Keep it responsive on mobile */
+  text-align: center; /* Center the text */
+  font-size: 18px; /* Slightly larger for impact */
+
+  z-index: 1000; /* Ensure it appears above everything */
 }
 
 .final-buttons { /* Layout container for the final Yes/No buttons */

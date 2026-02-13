@@ -11,7 +11,7 @@ const finalButtons = document.getElementById("finalButtons"); // Grab the contai
 const yesResult = document.getElementById("yesResult"); // Grab the result text area shown after “Yes”
 
 
-const TARGET = 1;
+const TARGET = 8;
 let score = 0;
 let running = false;
 let spawnTimer = null;
@@ -22,24 +22,43 @@ let yesScale = 1; // Current scale factor for the Yes button (1 = normal size)
 
 
 const messages = [
-  "You make my life brighter ✨",
-  "I love your laugh so much 😭💖",
-  "You’re my favorite person, always.",
-  "I still get excited to see you.",
-  "You’re cute. Like… unfairly cute.",
-  "Thank you for being you.",
-  "I’m proud of you 🫶",
-  "You feel like home.",
-  "You + me = my best days",
-  "Happy Valentine’s Day 💘",
+  "Verdens vakreste❤️",
+  "Du gir verdens beste kos❤️",
+  "Sender tusen klem og kyss til deg❤️",
+  "Savner deg masse❤️",
+  "Du har så smittende latter❤️",
+  "Jeg elsker deg❤️",
+  "Stolt av deg❤️",
+  "you + me + dog + cat = best life❤️",
 ];
 
-function showPopup(text) {
-  popup.textContent = text;
-  popup.classList.remove("hidden");
+function showPopup(text) { 
+  popup.textContent = text; // Set popup message text
+  popup.classList.remove("hidden"); // Make popup visible
+
+  // ---- PAUSE THE GAME ----
+  running = false; // Stop hearts from being collectible
+  clearInterval(spawnTimer); // Stop spawning new hearts
+
+  // Remove any existing hearts currently floating
+  const hearts = document.querySelectorAll(".heart"); // Select all hearts
+  hearts.forEach(h => h.remove()); // Remove them from screen
+
+  // Clear any previous popup timer
   clearTimeout(showPopup._t);
-  showPopup._t = setTimeout(() => popup.classList.add("hidden"), 1200);
+
+  // After 1.5 seconds, hide popup and resume game
+  showPopup._t = setTimeout(() => {
+
+    popup.classList.add("hidden"); // Hide popup
+
+    // ---- RESUME THE GAME ----
+    running = true; // Allow interactions again
+    spawnTimer = setInterval(spawnHeart, 450); // Restart heart spawning
+
+  }, 2500); // Popup duration (adjust if you want longer)
 }
+
 function resetFinalButtons() { 
   yesScale = 1; // Reset Yes button size back to normal
   yesBtn.style.transform = "scale(1)"; // Visually reset its scale
@@ -185,7 +204,13 @@ function spawnHeart() {
     heart.remove();
 
     // If enough hearts collected → end game
-    if (score >= TARGET) endGame();
+    if (score >= TARGET)  // If this was the final heart
+
+  // Wait slightly longer than the popup duration before ending the game
+  // This ensures the last love message is actually visible
+  setTimeout(() => {
+    endGame(); // Now transition to the final screen
+  }, 1600); // Should be slightly longer than your popup duration (e.g., 1500ms)
   });
 
   // Add heart to the screen
@@ -255,7 +280,7 @@ yesBtn.addEventListener("click", () => { // When she clicks Yes
   clearInterval(yesGrowInterval); // Stop the Yes button from growing
 
   yesBtn.style.transform = "scale(1)"; // Optionally reset scale so it doesn’t stay huge
-  yesResult.textContent = "YAYYY 💘 I love you! Happy Valentine’s Day 🫶"; // Show your success message
+  yesResult.textContent = "YAYYYYYYYYYY 💘 I love you!"; // Show your success message
   yesResult.classList.remove("hidden"); // Make the message visible
 
   // Optional: hide the No button after she says yes
